@@ -7,7 +7,7 @@ use App\Controller\AppController;
 class ArtigosController extends AppController
 {
 
-    public function initialize(): void
+    /*public function initialize(): void
     {
         parent::initialize();
 
@@ -19,11 +19,14 @@ class ArtigosController extends AppController
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
-    }
+   // } 
+
     public function index()
     {
-        $artigos = $this->Artigos->find('all');
-        $this->set(compact('artigos'));
+        //$artigos = $this->Artigos->find('all');
+        //$this->set(compact('artigos'));
+        $this->set('artigos', $this->paginate($this->Artigos));
+        $this->set('_serialize', ['artigos']);
     }
 
     public function view($id = null)
