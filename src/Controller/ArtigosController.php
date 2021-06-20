@@ -27,6 +27,7 @@ class ArtigosController extends AppController
         //$this->set(compact('artigos'));
         $this->set('artigos', $this->paginate($this->Artigos));
         $this->set('_serialize', ['artigos']);
+        $this->layout = 'layout';
     }
 
     public function view($id = null)
